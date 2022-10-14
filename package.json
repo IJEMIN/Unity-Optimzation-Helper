@@ -1,25 +1,20 @@
 {
-  "name": "com.omiyagames.template",
-  "displayName": "Omiya Games - Template Unity Package",
+  "name": "com.retr0.profile",
+  "displayName": "retr0 Profiler",
   "version": "1.0.0-pre.1",
-  "unity": "2021.2",
-  "unityRelease": "11f1",
-  "description": "This is a template package, used as a basis to build a bigger one.",
+  "unity": "2021.3",
+  "description": "Just misc tool for profile and optimize project.",
   "category": "Tool",
   "type": "tool",
   "license": "MIT",
   "author": {
-    "name": "Taro Omiya",
-    "email": "support@omiyagames.com",
-    "url": "https://www.omiyagames.com"
-  },
-  "dependencies": {
-    "com.unity.ext.nunit": "1.0.0"
+    "name": "i_jemin",
+    "email": "i_jemin@outlook.com",
+    "url": "https://ijemin.com"
   },
   "keywords": [
-    "Omiya Games",
-    "Scripts",
-    "Template",
+    "Optimization",
+    "Profiler",
     "Tool"
   ],
   "samples": [

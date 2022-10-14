@@ -8,14 +8,14 @@ then
     exit 1
 fi
 
-read -e -p "Company name: " -i "3D Group" COMPANY_FRIENDLY_NAME
-read -e -p "Company name in lower case: " -i "3d-group" COMPANY
-read -e -p "Unacceptable behavior may be reported at: " -i "reports@3d.fi" REPORT_EMAIL
-read -e -p "Company website: " -i "https://3d.fi" COMPANY_WEBSITE
-read -e -p "Repository name: " -i "unity-simple-notifications" REPOSITORY_NAME
-read -e -p "Friendly name: " -i "Notifications" FRIENDLY_NAME
-read -e -p "Description: " -i "Package for Unity game engine." DESCRIPTION
-read -e -p "Unity version: " -i "2019.4" UNITY_VERSION
+read COMPANY_FRIENDLY_NAME"?Company name: "
+read COMPANY"?Company name in lower case: "
+read REPORT_EMAIL"?Email address for report: "
+read COMPANY_WEBSITE"?Company website: "
+read REPOSITORY_NAME"?Repository name: "
+read FRIENDLY_NAME"?Friendly name: "
+read DESCRIPTION"?Description: "
+read UNITY_VERSION"?Unity version: "
 
 # Escape special characters for input to be used in sed
 COMPANY_FRIENDLY_NAME=$(echo "$COMPANY_FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');

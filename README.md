@@ -1,50 +1,71 @@
-[![npm package](https://img.shields.io/npm/v/com.3d-group.unity-package-template)](https://www.npmjs.com/package/com.3d-group.unity-package-template)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+# [Omiya Games](https://www.omiyagames.com/) - Template Unity Package
 
-# Unity package template
+[![Template Unity Package documentation](https://github.com/OmiyaGames/template-unity-package/workflows/Host%20DocFX%20Documentation/badge.svg)](https://omiyagames.github.io/template-unity-package/) [![Ko-fi Badge](https://img.shields.io/badge/donate-ko--fi-29abe0.svg?logo=ko-fi)](https://ko-fi.com/I3I51KS8F) [![License Badge](https://img.shields.io/github/license/OmiyaGames/template-unity-package)](/LICENSE.md)
 
-This is a template repository for creating new repositories for upm (Unity Package Manager) packages.
+![Unity Package Manager](https://omiyagames.github.io/template-unity-package/resources/preview.png)
 
-Generated repository will contain:
-- Basis for [Unity package](https://docs.unity3d.com/Manual/CustomPackages.html) (package.json, folder structure, assembly definitions etc.)
-- Basis for Runtime & Editor tests (can be run straight away after script has ran and package is in some Unity projects assets folder / marked as testable)
-- Sample/ExampleUnityProject - empty Unity project for running automated github tests via [unity-ci](https://unity-ci.com/docs)
-  - **Note:** Better way for doing this would be appreciated, there is an [issue about this in unity-test-runner](https://github.com/webbertakken/unity-test-runner/issues/71)
-- package.json to publish into npm
-- Automated github action workflows to run tests on push (further documentation can be found in templates/.github/workflows)
-- Automated github action [workflow to publish into npmjs](templates/.github/workflows/on-release.yml) on publish release
-  - **Note:** If your package contains a lot of images/data or size exceeds 10mbs it might better to just publish into upm package manager / other service that is meant for storing assets and other big data. It is a good practice to check npm registry guidelines before usage.
-- Example [package.json](templates/package.json) 
-- Example [README.md](templates/README.md)
-- Example [CONTRIBUTING.md](templates/CONTRIBUTING.md), based on [Contributor Covenant](https://www.contributor-covenant.org)
-- Example [License](templates/License) (MIT)
-- Example [CODEOWNERS](templates/.github/CODEOWNERS), for further details please see [github docs on CODEOWNERS](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners)
+**Template Unity Package** is a Github template [Omiya Games](https://www.omiyagames.com/) uses to start a new [Unity](https://unity.com/) package.  To use this template for your own purposes, we recommend:
 
-**Note:** By default this repository is meant for creating open source packages. If creating closed source it might be a good idea to change license and go through generated package.json files etc.
+- Clicking on the green "Use this template" button to create a new online repository on Github directly, or
+- Click the "Releases" link, and download the latest archive as zip or gzip file.
 
-## Usage
+From there, consult the following documentation to get a better idea of what files should be edited and/or renamed, and how:
 
-1. Create a new repository using this template
-2. Clone the new repository
-3. Run RUNME.sh (cautiously!) with bash at new repository root folder and follow instructions, if using windows [Git for Windows](https://gitforwindows.org/) provides bash and all necessary tools.
-4. Move all files (except folders .git/ .github/ and Samples/) inside any Unity Project Assets folder. This will generate .meta files that are required by Unity. 
-5. Move files back to the original folder
+## Documentation
 
-**Notes:**
-- RUNME.sh just helps replacing all tags etc. `{{REPOSITORY_NAME}}` or `{{DESCRIPTION}}` from files, if not familiar with bash scripts this step should be done manually 
-- Brief introduction on how to develop your Unity package is included in CONTRIBUTING.md
+As there are many steps to developing a Unity package, the documentation is currently split into a couple of parts, each covering a specific feature or overview:
 
-For further details, please see
- - [Github docs on creating repository from template](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
- - [Unity docs on creating custom packages.](https://docs.unity3d.com/Manual/CustomPackages.html)
+- [File and Folder Structure](https://omiyagames.github.io/template-unity-package/manual/structure.html)
+- [Customizing Package Files](https://omiyagames.github.io/template-unity-package/manual/customizePackage.html)
+- [Adding Source Code and Assets](https://omiyagames.github.io/template-unity-package/manual/customizeSource.html)
+- [Adding Importable Assets](https://omiyagames.github.io/template-unity-package/manual/customizeSamples.html)
+- [Customizing Documentation](https://omiyagames.github.io/template-unity-package/manual/customizeDocumentation.html)
 
-When your package is ready for publish, you can publish it into:
-- Open Source Unity Package Registry [openupm](https://openupm.com/)
-- [npmjs](https://docs.npmjs.com/cli/publish) package registry
-  - **Note:** If your package contains a lot of images/data or size exceeds 10mbs it might not be a good idea.
+The [author](https://github.com/japtar10101) of this package also wrote a blog post on [*How to Split Up an Existing Unity Git Project into Smaller Unity Packages*](https://www.taroomiya.com/2020/04/29/how-to-split-up-an-existing-unity-git-project-into-smaller-unity-packages/).
 
-## License
+Finally, changes in the project is documented under the [change log page](https://omiyagames.github.io/template-unity-package/manual/changelog.html).
 
-MIT License
+## Install
 
-Copyright © 2020 3D Group
+For ease of updating installation instructions in future projects, a template instruction is specified below.  Note that [instructions on using OpenUPM's](#through-openupm) to install *this* template package is merely theoretical, as this project is not actually hosted in OpenUPM:
+
+There are two common methods for installing this package.
+
+### Through [OpenUPM](https://openupm.com/)
+
+Installing via [OpenUPM's command line tool](https://openupm.com/) is recommended because it supports dependency resolution, upgrading, and downgrading this package.
+
+If you haven't already [installed OpenUPM](https://openupm.com/docs/getting-started.html#installing-openupm-cli), you can do so through Node.js's `npm` (obviously have Node.js installed in your system first):
+```
+npm install -g openupm-cli
+```
+Then, to install this package, just run the following command at the root of your Unity project:
+```
+openupm add com.omiyagames.template
+```
+
+### Through [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui-giturl.html)
+
+Unity's own Package Manager supports [importing packages through a URL to a Git repo](https://docs.unity3d.com/Manual/upm-ui-giturl.html):
+
+1. First, on this repository page, click the "Clone or download" button, and copy over this repository's HTTPS URL.  
+2. Then click on the + button on the upper-left-hand corner of the Package Manager, select "Add package from git URL..." on the context menu, then paste this repo's URL!
+
+While easier to follow than the first method, this one does not support dependency resolution and package upgrading when a new version is released.  So proceed with caution.
+
+## Generating Documentation on New Packages
+
+This package uses [DocFX](https://dotnet.github.io/docfx/) and Github Actions to auto-generate its documentation from both the comments in the source code and the Markdown files in the [`Documentation~`](/Documentation~) directory.  If templated/forked on GitHub, the new project may be configured to host its own documentation by following the instructions specified in the [Customizing Documentation](https://omiyagames.github.io/template-unity-package/manual/customizeDocumentation.html) page.
+
+For other git hosting websites, there is also has a pre-made [Doxygen](https://github.com/doxygen/doxygen) settings file in the same directory to run Doxywizard through.
+
+## Resources
+
+- [Documentation](https://omiyagames.github.io/template-unity-package/)
+- [Change Log](/CHANGELOG.md)
+
+## LICENSE
+
+Overall package is licensed under [MIT](/LICENSE.md), unless otherwise noted in the [3rd party licenses](/THIRD%20PARTY%20NOTICES.md) file and/or source code.
+
+Copyright (c) 2019-2022 Omiya Games

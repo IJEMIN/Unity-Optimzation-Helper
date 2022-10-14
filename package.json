@@ -1,27 +1,32 @@
 {
-  "name": "com.3d-group.unity-package-template",
-  "displayName": "3D Group - Unity package template",
-  "version": "1.1.2",
-  "description": "Template for creating Unity game engine packages",
-  "dependencies": { },
-  "keywords": [
-    "unity",
-	"unity3d",
-	"upm",
-    "3d-group",
-    "utility"
-  ],
-  "homepage": "https://github.com/3d-group/unity-package-template.git",
-  "bugs": {
-    "url": "https://github.com/3d-group/unity-package-template/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/3d-group/unity-package-template.git"
-  },
+  "name": "com.omiyagames.template",
+  "displayName": "Omiya Games - Template Unity Package",
+  "version": "1.0.0-pre.1",
+  "unity": "2021.2",
+  "unityRelease": "11f1",
+  "description": "This is a template package, used as a basis to build a bigger one.",
+  "category": "Tool",
+  "type": "tool",
   "license": "MIT",
-  "author": "3D Group (https://3d.fi/)",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "author": {
+    "name": "Taro Omiya",
+    "email": "support@omiyagames.com",
+    "url": "https://www.omiyagames.com"
+  },
+  "dependencies": {
+    "com.unity.ext.nunit": "1.0.0"
+  },
+  "keywords": [
+    "Omiya Games",
+    "Scripts",
+    "Template",
+    "Tool"
+  ],
+  "samples": [
+    {
+      "displayName": "Example 1",
+      "description": "This sample is just an example",
+      "path": "Samples~/Example1"
+    }
+  ]
 }
